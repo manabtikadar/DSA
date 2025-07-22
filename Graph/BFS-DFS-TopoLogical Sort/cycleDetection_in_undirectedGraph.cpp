@@ -74,7 +74,7 @@ bool isCycleDfs(int node,map<int,set<int>>& adjList,unordered_map<int,bool>& vis
                 return true;
             }
         }
-        else if(i!=parent)
+        else if(visited[i] && i!=parent)
         {
             return true;
         }

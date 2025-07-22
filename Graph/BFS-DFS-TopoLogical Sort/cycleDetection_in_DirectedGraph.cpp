@@ -38,7 +38,7 @@ bool isCycleDirectedDfs(int node,map<int,set<int>>& adjList,unordered_map<int,bo
       if(cycleDetected)
          return true;
     }
-    else if(dfsvisited[neighbour])
+    else if(visited[neighbour] && dfsvisited[neighbour])
     {
       return true;
     }
