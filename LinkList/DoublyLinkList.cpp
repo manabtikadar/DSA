@@ -33,7 +33,6 @@ void create(int A[],int n)
 
 void ReverseDisplay(struct Node *p)
 {
-  
   while(p->next!=NULL)
   {
      
