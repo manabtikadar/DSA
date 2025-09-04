@@ -73,13 +73,67 @@ using namespace std;
 //   return 0;
 // }
 
+// int main()
+// {
+//   int i=0;
+//   while(true)
+//   {
+//     i++;
+//   }
+
+//   return 0;
+// }
+
+
+// int minWage(vector<int>& arr)
+// {
+//   int n=arr.size();
+
+//   int x=0;
+//   int y=x;
+//   for(int i=0; i<n; i++)
+//   {
+//     y=y+arr[i];
+//     if(y<0)
+//     {
+//       x+=(-y);
+//       y=0;
+//     }
+//   }
+
+//   return x;
+// }
+
+vector<string> folderName(vector<string> folder)
+{
+  int n=folder.size();
+  map<string,int> mpp;
+  vector<string> ans;
+  for(int i=0; i<n; i++)
+  {
+    string s=folder[i];
+    if(mpp.find(s)==mpp.end())
+    {
+      mpp[s]++;
+      ans.push_back(s);
+    }
+    else
+    {
+      mpp[s]++;
+      s+=to_string(mpp[s]-1);
+      ans.push_back(s);
+    }
+  }
+  return ans;
+}
+
 int main()
 {
-  int i=0;
-  while(true)
+  vector<string> arr = {"home" , "myfirst" ,"downloads", "myfirst", "myfirst"};
+  vector<string> result=folderName(arr);
+  for(auto it:result)
   {
-    i++;
+    cout<<it<<endl;
   }
-
   return 0;
 }
